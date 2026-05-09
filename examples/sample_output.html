@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>html-memoスキルについて</title>
+  <style>
+    :root { --bg-dark: #121212; --text-main: #E0E0E0; --claude-orange: #D97757; --border-color: #333333; }
+    body { background-color: var(--bg-dark); color: var(--text-main); font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif; line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 40px 20px; letter-spacing: 0.05em; }
+    h1, h2, h3 { color: var(--claude-orange); font-weight: normal; }
+    h1 { font-size: 2.2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 30px; }
+    h2 { font-size: 1.6rem; border-left: 4px solid var(--claude-orange); padding-left: 15px; margin-top: 40px; }
+    p { margin-bottom: 1.5rem; }
+    strong { color: var(--claude-orange); font-weight: bold; }
+    blockquote { margin: 0; padding: 15px 20px; background-color: rgba(217, 119, 87, 0.05); border-left: 4px solid var(--claude-orange); color: #B0B0B0; font-style: italic; }
+    code { font-family: "Fira Code", "Consolas", monospace; background-color: #222; padding: 3px 6px; border-radius: 4px; color: #FFB8A1; font-size: 0.9em; }
+    pre { background-color: #0A0A0A; border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; overflow-x: auto; }
+    pre code { background-color: transparent; padding: 0; color: var(--text-main); }
+  </style>
+</head>
+<body>
+  <h1>html-memoスキルについて</h1>
+
+  <h2>概要</h2>
+  <p>
+    <strong>html-memo</strong> は、Claude Code 上で動作するカスタムスキルです。日々の作業ログや学習メモ、ちょっとした思いつきを、コマンド一発で「明朝体 × ダークモード」のエレガントな <strong>HTMLファイル</strong> として保存できます。
+  </p>
+  <p>
+    Markdownのまま放置されがちな情報を、読み返したくなる「資料」へと昇華させることを目的としています。
+  </p>
+
+  <blockquote>
+    メモは書いた瞬間がピークではなく、読み返したときに価値が再生される。だからこそ、見た目の美しさが思考の継続性を支える。
+  </blockquote>
+
+  <h2>デザインの思想</h2>
+  <p>
+    本スキルが採用する明朝体は、画面上における可読性と落ち着きを両立させるための選択です。背景の <strong>#121212</strong> と、アクセントカラーの <strong>#D97757</strong>（Claudeオレンジ）の組み合わせにより、長時間の閲覧でも目が疲れにくく、それでいて重要なキーワードが自然と浮かび上がる構成になっています。
+  </p>
+
+  <h3>主な構成要素</h3>
+  <p>
+    見出しはオレンジで統一され、セクション見出しには左側のアクセントラインが入ります。引用ブロックは思索や気づきを刻むための場所として、控えめな背景色とイタリック体で表現されます。
+  </p>
+
+  <h2>使い方</h2>
+  <p>
+    Claude Code のプロンプトで、次のように入力するだけです。
+  </p>
+
+  <blockquote>
+    生成されたファイルは <strong>memos/</strong> ディレクトリに自動的に保存されます。ファイル名には日付とテーマ名が含まれるため、後から見返す際にも整理が容易です。
+  </blockquote>
+
+  <h2>こんな人におすすめ</h2>
+  <p>
+    プレーンテキストでは物足りないが、ドキュメントツールを開くのは大袈裟──そんな <strong>「日常のメモと正式な資料の中間」</strong> を求めている方に最適です。書き手のための道具でありながら、読み手の体験までデザインする。それが html-memo の目指すところです。
+  </p>
+</body>
+</html>
