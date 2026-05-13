@@ -5,54 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>html-memoスキルについて</title>
   <style>
-    :root {
-      --bg-dark: #1E1E1E;
-      --bg-card: #272727;
-      --text-main: #E0E0E0;
-      --text-muted: #A0A0A0;
-      --orange: #D97757;
-      --blueberry: #7B78D8;
-      --border-color: #383838;
-    }
+    :root { --bg-dark: #121212; --text-main: #E0E0E0; --claude-orange: #D97757; --border-color: #333333; }
     body { background-color: var(--bg-dark); color: var(--text-main); font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif; line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 40px 20px; letter-spacing: 0.05em; }
-    h1, h2, h3 { font-weight: normal; }
-    h1 { color: var(--orange); font-size: 2.2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 30px; }
-    h2 { color: var(--orange); font-size: 1.6rem; border-left: 4px solid var(--orange); padding-left: 15px; margin-top: 40px; }
-    h3 { color: var(--blueberry); font-size: 1.2rem; border-left: 3px solid var(--blueberry); padding-left: 12px; margin-top: 25px; }
+    h1, h2, h3 { color: var(--claude-orange); font-weight: normal; }
+    h1 { font-size: 2.2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 30px; }
+    h2 { font-size: 1.6rem; border-left: 4px solid var(--claude-orange); padding-left: 15px; margin-top: 40px; }
     p { margin-bottom: 1.5rem; }
-    strong { color: var(--orange); font-weight: bold; }
-    em.blue { color: var(--blueberry); font-style: normal; font-weight: bold; }
-    blockquote { margin: 0 0 1.5rem; padding: 15px 20px; background-color: rgba(217, 119, 87, 0.05); border-left: 4px solid var(--orange); color: #B0B0B0; font-style: italic; }
-    code { font-family: "Fira Code", "Consolas", monospace; background-color: #2A2A2A; padding: 3px 6px; border-radius: 4px; color: #FFB8A1; font-size: 0.9em; }
-    pre { background-color: #181818; border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; overflow-x: auto; }
+    strong { color: var(--claude-orange); font-weight: bold; }
+    blockquote { margin: 0; padding: 15px 20px; background-color: rgba(217, 119, 87, 0.05); border-left: 4px solid var(--claude-orange); color: #B0B0B0; font-style: italic; }
+    code { font-family: "Fira Code", "Consolas", monospace; background-color: #222; padding: 3px 6px; border-radius: 4px; color: #FFB8A1; font-size: 0.9em; }
+    pre { background-color: #0A0A0A; border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; overflow-x: auto; }
     pre code { background-color: transparent; padding: 0; color: var(--text-main); }
-
-    /* Table */
-    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
-    th { background-color: rgba(123, 120, 216, 0.15); color: var(--blueberry); padding: 10px 14px; text-align: left; border: 1px solid var(--border-color); font-weight: normal; letter-spacing: 0.05em; }
-    td { padding: 10px 14px; border: 1px solid var(--border-color); vertical-align: top; }
-    tr:nth-child(even) td { background-color: rgba(255,255,255,0.02); }
-    tr:hover td { background-color: rgba(123, 120, 216, 0.05); }
-
-    /* Badge */
-    .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.78rem; letter-spacing: 0.06em; border: 1px solid var(--orange); color: var(--orange); margin: 0 3px; font-family: "Fira Code", "Consolas", monospace; }
-    .badge.blue { border-color: var(--blueberry); color: var(--blueberry); }
-
-    /* Details / Summary */
-    details { margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; }
-    summary { padding: 12px 16px; cursor: pointer; color: var(--blueberry); background-color: var(--bg-card); list-style: none; }
-    summary::before { content: "▶ "; font-size: 0.75em; }
-    details[open] summary::before { content: "▼ "; }
-    details > *:not(summary) { padding: 16px; background-color: var(--bg-dark); }
-
-    /* Definition list */
-    dl { margin: 1rem 0 1.5rem; }
-    dt { color: var(--blueberry); font-weight: bold; margin-top: 1rem; }
-    dd { margin-left: 1.5rem; color: var(--text-muted); }
-
-    /* Progress bar */
-    .progress { background-color: #2A2A2A; border-radius: 4px; height: 8px; margin: 6px 0 14px; overflow: hidden; }
-    .bar { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--blueberry), var(--orange)); }
   </style>
 </head>
 <body>
@@ -60,11 +23,10 @@
 
   <h2>概要</h2>
   <p>
-    <strong>html-memo</strong> は、Claude Code 上で動作するカスタムスキルです。日々の作業ログや学習メモ、ちょっとした思いつきを、コマンド一発で「明朝体 × ダークモード」のエレガントな <strong>HTMLファイル</strong> として保存できます。
+    <strong>html-memo</strong> は、Claude Code 上で動作するカスタムスキルです。日々の作業ログや学習メモを、コマンド一発で「明朝体 × ダークモード」のエレガントな <strong>HTMLファイル</strong> として保存できます。
   </p>
   <p>
     Markdownのまま放置されがちな情報を、読み返したくなる「資料」へと昇華させることを目的としています。
-    カラーパレットは <strong>Claudeオレンジ</strong> を第1アクセント、<em class="blue">ブルーベリー</em> を第2アクセントとして使い分けます。
   </p>
 
   <blockquote>
@@ -72,159 +34,27 @@
   </blockquote>
 
   <h2>デザイン仕様</h2>
+  <p>
+    背景色には純黒より柔らかい <strong>#121212</strong> を採用しています。長時間の閲覧でも目が疲れにくく、アクセントカラーの <strong>#D97757</strong>（Claudeオレンジ）が自然に映えます。
+  </p>
+  <p>
+    フォントは明朝体を指定し、日本語テキストに品格と読みやすさを与えます。英数字には等幅フォントを組み合わせ、コードスニペットとの視覚的な区別を明確にします。
+  </p>
 
-  <h3>カラーパレット</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>役割</th>
-        <th>カラーコード</th>
-        <th>用途</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>背景</td>
-        <td><code>#1E1E1E</code></td>
-        <td>ベースとなる濃いグレー。純黒より柔らかく長時間閲覧に優しい。</td>
-      </tr>
-      <tr>
-        <td>テキスト</td>
-        <td><code>#E0E0E0</code></td>
-        <td>メインコピー。背景との適切なコントラストを保つ。</td>
-      </tr>
-      <tr>
-        <td><strong>第1アクセント</strong></td>
-        <td><code>#D97757</code></td>
-        <td>h1・h2・strong・blockquoteボーダー。Claudeオレンジ。</td>
-      </tr>
-      <tr>
-        <td><em class="blue">第2アクセント</em></td>
-        <td><code>#7B78D8</code></td>
-        <td>h3・em.blue・table th・badge.blue。ブルーベリー。</td>
-      </tr>
-    </tbody>
-  </table>
+  <h2>使い方</h2>
+  <p>
+    Claude Code のプロンプトに <strong>/html-memo</strong> と入力し、メモにしたい内容を続けて記述するだけです。スキルが自動的にHTMLファイルを生成し、<code>memos/</code> ディレクトリに保存します。
+  </p>
 
-  <h3>Markdownでは表現できないリッチ要素</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>要素</th>
-        <th>タグ</th>
-        <th>適した用途</th>
-        <th>状態</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>スタイル付きテーブル</td>
-        <td><code>&lt;table&gt;</code></td>
-        <td>比較・仕様一覧・データ表</td>
-        <td><span class="badge">v1</span></td>
-      </tr>
-      <tr>
-        <td>バッジ／タグ</td>
-        <td><code>.badge</code></td>
-        <td>ステータス・カテゴリ・バージョン</td>
-        <td><span class="badge">v1</span></td>
-      </tr>
-      <tr>
-        <td>折りたたみセクション</td>
-        <td><code>&lt;details&gt;</code></td>
-        <td>補足情報・長い説明の収納</td>
-        <td><span class="badge blue">v1</span></td>
-      </tr>
-      <tr>
-        <td>定義リスト</td>
-        <td><code>&lt;dl&gt;</code></td>
-        <td>用語集・設定一覧</td>
-        <td><span class="badge blue">v1</span></td>
-      </tr>
-      <tr>
-        <td>プログレスバー</td>
-        <td><code>.progress</code></td>
-        <td>進捗・習熟度・達成率</td>
-        <td><span class="badge blue">v1</span></td>
-      </tr>
-      <tr>
-        <td>セル結合テーブル</td>
-        <td><code>colspan / rowspan</code></td>
-        <td>複雑な構造データ</td>
-        <td><span class="badge">v1</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>各要素のデモ</h2>
-
-  <h3>折りたたみセクション</h3>
-  <details>
-    <summary>設計の背景にあった迷い（クリックで展開）</summary>
-    <p>
-      当初、アクセントカラーは1色だけで十分だと考えていた。しかし実際にメモを書き始めると、<strong>「強調したいが、オレンジほど主張させたくない」</strong>という情報が多く存在することに気づいた。
-      ブルーベリーを第2アクセントに加えることで、情報の優先度を色で表現できるようになった。
-    </p>
-  </details>
-
-  <h3>定義リスト</h3>
-  <dl>
-    <dt>第1アクセント（オレンジ）</dt>
-    <dd>最重要キーワード、見出し、引用ボーダーに使用。読者の視線を最初に引きつける役割。</dd>
-    <dt>第2アクセント（ブルーベリー）</dt>
-    <dd>補助的な強調、サブセクション見出し、テーブルヘッダーに使用。オレンジと対になる落ち着いた存在感。</dd>
-    <dt>ベース背景（濃いグレー）</dt>
-    <dd>純黒ではなく <code>#1E1E1E</code> を選択。黒に比べてカードや要素の段差を自然に表現できる。</dd>
-  </dl>
-
-  <h3>プログレスバーで習熟度を可視化</h3>
-  <p>HTMLテンプレート設計 <span class="badge">完了</span></p>
-  <div class="progress"><div class="bar" style="width:100%"></div></div>
-
-  <p>サンプルコンテンツ拡充 <span class="badge blue">進行中</span></p>
-  <div class="progress"><div class="bar" style="width:70%"></div></div>
-
-  <p>スキル配布 <span class="badge blue">予定</span></p>
-  <div class="progress"><div class="bar" style="width:20%"></div></div>
-
-  <h3>セル結合テーブル</h3>
-  <table>
-    <thead>
-      <tr>
-        <th colspan="2">表現手段の比較</th>
-        <th>適した場面</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td rowspan="2">Markdown</td>
-        <td>プレーンテキスト</td>
-        <td>素早いメモ・コード内ドキュメント</td>
-      </tr>
-      <tr>
-        <td>GitHubテーブル</td>
-        <td>簡単な一覧表（結合不可）</td>
-      </tr>
-      <tr>
-        <td rowspan="3"><em class="blue">html-memo</em></td>
-        <td>スタイル付きテーブル</td>
-        <td>比較表・仕様書・複雑な構造データ</td>
-      </tr>
-      <tr>
-        <td>バッジ・折りたたみ</td>
-        <td>ステータス管理・情報の階層化</td>
-      </tr>
-      <tr>
-        <td>プログレスバー</td>
-        <td>進捗レポート・スキルマップ</td>
-      </tr>
-    </tbody>
-  </table>
+  <pre><code>/html-memo 今日の開発の振り返りと明日のタスクをまとめて</code></pre>
 
   <h2>こんな人におすすめ</h2>
   <p>
     プレーンテキストでは物足りないが、ドキュメントツールを開くのは大袈裟──そんな <strong>「日常のメモと正式な資料の中間」</strong> を求めている方に最適です。
-    書き手のための道具でありながら、読み手の体験までデザインする。それが <em class="blue">html-memo</em> の目指すところです。
   </p>
+
+  <blockquote>
+    書き手のための道具でありながら、読み手の体験までデザインする。それが html-memo の目指すところです。
+  </blockquote>
 </body>
 </html>
