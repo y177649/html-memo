@@ -1,5 +1,18 @@
 # html-memo (Claude Code Skill)
 
+<table>
+  <tr>
+    <td align="center">
+      <strong>🇯🇵 日本語</strong><br>
+      <sub>現在のページ</sub>
+    </td>
+    <td align="center">
+      <a href="README.en.md"><strong>🇺🇸 English</strong></a><br>
+      <sub>Switch to English</sub>
+    </td>
+  </tr>
+</table>
+
 Claude Code上で `/html-memo` コマンドを叩くだけで、日々のメモや作業ログを「明朝体×ダークモード」のエレガントなHTMLファイルとして生成・保存するカスタムスキルです。
 
 ![Preview](assets/preview.png)
