@@ -10,8 +10,8 @@
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.ai/claude-code)
 [![Style](https://img.shields.io/badge/Style-Serif_%C3%97_Dark-121212)](#)
 
-[![日本語](https://img.shields.io/badge/Lang-%E6%97%A5%E6%9C%AC%E8%AA%9E-lightgrey.svg)](README.md)
-[![English](https://img.shields.io/badge/Lang-English-D97757.svg)](README.en.md)
+[![日本語](https://img.shields.io/badge/Lang-%E6%97%A5%E6%9C%AC%E8%AA%9E-87CEEB.svg)](README.md)
+[![English](https://img.shields.io/badge/Lang-English-87CEEB.svg)](README.en.md)
 
 </div>
 
