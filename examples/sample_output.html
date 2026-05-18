@@ -5,56 +5,363 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>html-memoスキルについて</title>
   <style>
-    :root { --bg-dark: #121212; --text-main: #E0E0E0; --claude-orange: #D97757; --border-color: #333333; }
-    body { background-color: var(--bg-dark); color: var(--text-main); font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif; line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 40px 20px; letter-spacing: 0.05em; }
-    h1, h2, h3 { color: var(--claude-orange); font-weight: normal; }
-    h1 { font-size: 2.2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 30px; }
-    h2 { font-size: 1.6rem; border-left: 4px solid var(--claude-orange); padding-left: 15px; margin-top: 40px; }
-    p { margin-bottom: 1.5rem; }
-    strong { color: var(--claude-orange); font-weight: bold; }
-    blockquote { margin: 0; padding: 15px 20px; background-color: rgba(217, 119, 87, 0.05); border-left: 4px solid var(--claude-orange); color: #B0B0B0; font-style: italic; }
-    code { font-family: "Fira Code", "Consolas", monospace; background-color: #222; padding: 3px 6px; border-radius: 4px; color: #FFB8A1; font-size: 0.9em; }
-    pre { background-color: #0A0A0A; border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; overflow-x: auto; }
-    pre code { background-color: transparent; padding: 0; color: var(--text-main); }
+    @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg: #121212;
+      --ink: #E9E5DC;
+      --ink-soft: #9d978a;
+      --ink-faint: #6b665d;
+      --accent: #D97757;
+      --accent-2: #E8A98F;
+      --rule: #2c2925;
+      --code-bg: #0c0b0a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(900px 520px at 82% -8%, rgba(217,119,87,0.11), transparent 70%),
+        radial-gradient(720px 600px at -12% 108%, rgba(217,119,87,0.06), transparent 72%);
+      background-attachment: fixed;
+      color: var(--ink);
+      font-family: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      line-height: 1.95;
+      letter-spacing: 0.04em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    ::selection { background: rgba(217,119,87,0.32); color: #fff; }
+
+    article {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 104px 32px 120px;
+      position: relative;
+    }
+
+    /* --- Header --- */
+    .memo-header {
+      margin-bottom: 8px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .kicker::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .memo-header h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 5.4vw, 3.15rem);
+      font-weight: 800;
+      line-height: 1.4;
+      letter-spacing: 0.015em;
+      color: #F4F1EA;
+    }
+
+    /* --- Body --- */
+    .memo-body { counter-reset: section; margin-top: 52px; }
+
+    .memo-body h2 {
+      margin: 78px 0 22px;
+      font-size: 1.58rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: #F4F1EA;
+    }
+    .memo-body h2::before {
+      counter-increment: section;
+      content: counter(section, decimal-leading-zero);
+      display: block;
+      margin-bottom: 8px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+    }
+    .memo-body > h2:first-child { margin-top: 0; }
+
+    .memo-body h3 {
+      margin: 44px 0 14px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent-2);
+    }
+
+    .memo-body p { margin: 0 0 1.6rem; }
+
+    .memo-body > p:first-of-type::first-letter {
+      float: left;
+      margin: 0.04em 0.14em -0.06em 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 4.7rem;
+      font-weight: 600;
+      line-height: 0.78;
+      color: var(--accent);
+    }
+
+    strong { color: var(--accent); font-weight: 700; }
+    em { color: var(--accent-2); }
+
+    a {
+      color: var(--accent-2);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(217,119,87,0.42);
+      transition: border-color 0.2s ease;
+    }
+    a:hover { border-bottom-color: var(--accent); }
+
+    /* --- Blockquote --- */
+    blockquote {
+      margin: 46px 0;
+      padding: 26px 32px 28px;
+      background: linear-gradient(180deg, rgba(217,119,87,0.07), rgba(217,119,87,0.015));
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      border-radius: 2px;
+      font-size: 1.12rem;
+      font-style: italic;
+      color: #cdc7b9;
+    }
+    blockquote::before {
+      content: "\201C";
+      display: block;
+      height: 0.42em;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 3.4rem;
+      font-style: normal;
+      line-height: 1;
+      color: var(--accent);
+    }
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* --- Lists --- */
+    ul, ol { margin: 0 0 1.6rem; padding-left: 1.5em; }
+    li { margin-bottom: 0.55rem; padding-left: 0.3em; }
+    li::marker { color: var(--accent); }
+    ol li::marker { font-family: "Cormorant Garamond", serif; font-weight: 600; }
+
+    /* --- Code --- */
+    code {
+      font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+      font-size: 0.83em;
+      letter-spacing: 0;
+      background: var(--code-bg);
+      border: 1px solid var(--rule);
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: var(--accent-2);
+    }
+    pre {
+      margin: 32px 0;
+      padding: 24px 26px;
+      background: var(--code-bg);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      overflow-x: auto;
+      position: relative;
+    }
+    pre::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent 60%);
+    }
+    pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 0.86em;
+      line-height: 1.75;
+      color: #d8d3c8;
+    }
+
+    /* --- Table --- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 34px 0;
+      font-size: 0.96rem;
+    }
+    th, td {
+      padding: 13px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--rule);
+    }
+    thead th {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--accent);
+    }
+    tbody tr { transition: background 0.18s ease; }
+    tbody tr:hover { background: rgba(217,119,87,0.045); }
+
+    img { max-width: 100%; border: 1px solid var(--rule); border-radius: 4px; }
+
+    /* --- Divider --- */
+    hr {
+      border: none;
+      height: 1px;
+      width: 64%;
+      margin: 58px auto;
+      background: linear-gradient(90deg, transparent, var(--rule), transparent);
+      position: relative;
+    }
+    hr::after {
+      content: "\25C7";
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0 14px;
+      background: var(--bg);
+      color: var(--accent);
+      font-size: 0.66rem;
+    }
+
+    /* --- Footer --- */
+    .memo-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 92px;
+      padding-top: 26px;
+      border-top: 1px solid var(--rule);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 0.92rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .memo-footer .mark { color: var(--accent); }
+
+    /* --- Entrance --- */
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .memo-header, .memo-body > *, .memo-footer {
+      animation: rise 0.72s cubic-bezier(0.2,0.7,0.2,1) both;
+    }
+    .memo-header { animation-delay: 0.04s; }
+    .memo-body > *:nth-child(1) { animation-delay: 0.14s; }
+    .memo-body > *:nth-child(2) { animation-delay: 0.20s; }
+    .memo-body > *:nth-child(3) { animation-delay: 0.26s; }
+    .memo-body > *:nth-child(4) { animation-delay: 0.32s; }
+    .memo-body > *:nth-child(5) { animation-delay: 0.38s; }
+    .memo-body > *:nth-child(6) { animation-delay: 0.44s; }
+    .memo-footer { animation-delay: 0.5s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .memo-header, .memo-body > *, .memo-footer { animation: none; }
+    }
+
+    @media (max-width: 560px) {
+      article { padding: 72px 22px 88px; }
+      blockquote { padding: 22px 22px 24px; }
+    }
   </style>
 </head>
 <body>
-  <h1>html-memoスキルについて</h1>
+  <article>
+    <header class="memo-header">
+      <p class="kicker">Memo &middot; 2026.05.18</p>
+      <h1>html-memoスキルについて</h1>
+    </header>
+    <div class="memo-body">
 
-  <h2>概要</h2>
-  <p>
-    <strong>html-memo</strong> は、Claude Code 上で動作するカスタムスキルです。日々の作業ログや学習メモを、コマンド一発で「明朝体 × ダークモード」のエレガントな <strong>HTMLファイル</strong> として保存できます。
-  </p>
-  <p>
-    Markdownのまま放置されがちな情報を、読み返したくなる「資料」へと昇華させることを目的としています。
-  </p>
+      <p>
+        <strong>html-memo</strong> は、Claude Code 上で動作するカスタムスキルです。日々の作業ログや学習メモを、コマンド一発で「明朝体 × ダークモード」のエレガントな <strong>HTMLファイル</strong> として保存できます。Markdownのまま放置されがちな情報を、読み返したくなる「資料」へと昇華させることを目的としています。
+      </p>
 
-  <blockquote>
-    メモは書いた瞬間がピークではなく、読み返したときに価値が再生される。だからこそ、見た目の美しさが思考の継続性を支える。
-  </blockquote>
+      <blockquote>
+        メモは書いた瞬間がピークではなく、読み返したときに価値が再生される。だからこそ、見た目の美しさが思考の継続性を支える。
+      </blockquote>
 
-  <h2>デザイン仕様</h2>
-  <p>
-    背景色には純黒より柔らかい <strong>#121212</strong> を採用しています。長時間の閲覧でも目が疲れにくく、アクセントカラーの <strong>#D97757</strong>（Claudeオレンジ）が自然に映えます。
-  </p>
-  <p>
-    フォントは明朝体を指定し、日本語テキストに品格と読みやすさを与えます。英数字には等幅フォントを組み合わせ、コードスニペットとの視覚的な区別を明確にします。
-  </p>
+      <h2>デザイン仕様</h2>
+      <p>
+        背景色には純黒より柔らかい <strong>#121212</strong> を採用し、温かみのあるラジアルグラデーションと微細なノイズテクスチャを重ねています。長時間の閲覧でも目が疲れにくく、アクセントカラーの <strong>#D97757</strong>（Claudeオレンジ）が紙面に静かに映えます。
+      </p>
 
-  <h2>使い方</h2>
-  <p>
-    Claude Code のプロンプトに <strong>/html-memo</strong> と入力し、メモにしたい内容を続けて記述するだけです。スキルが自動的にHTMLファイルを生成し、<code>memos/</code> ディレクトリに保存します。
-  </p>
+      <h3>タイポグラフィ</h3>
+      <p>
+        本文には明朝体を指定し、日本語テキストに品格と読みやすさを与えます。見出しの連番や引用符には <em>Cormorant Garamond</em> を組み合わせ、欧文の表情で誌面にリズムを生み出します。
+      </p>
 
-  <pre><code>/html-memo 今日の開発の振り返りと明日のタスクをまとめて</code></pre>
+      <table>
+        <thead>
+          <tr><th>要素</th><th>役割</th><th>処理</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>見出し</td><td>セクション区切り</td><td>連番を自動付与</td></tr>
+          <tr><td>段落冒頭</td><td>導入</td><td>ドロップキャップ化</td></tr>
+          <tr><td>引用</td><td>インサイトの強調</td><td>装飾枠で囲む</td></tr>
+          <tr><td>コード</td><td>技術的な記述</td><td>等幅フォントで区別</td></tr>
+        </tbody>
+      </table>
 
-  <h2>こんな人におすすめ</h2>
-  <p>
-    プレーンテキストでは物足りないが、ドキュメントツールを開くのは大袈裟──そんな <strong>「日常のメモと正式な資料の中間」</strong> を求めている方に最適です。
-  </p>
+      <hr>
 
-  <blockquote>
-    書き手のための道具でありながら、読み手の体験までデザインする。それが html-memo の目指すところです。
-  </blockquote>
+      <h2>使い方</h2>
+      <p>
+        Claude Code のプロンプトに <code>/html-memo</code> と入力し、メモにしたい内容を続けて記述するだけです。スキルが自動的にHTMLファイルを生成し、<code>memos/</code> ディレクトリに保存します。
+      </p>
+
+      <pre><code>/html-memo 今日の開発の振り返りと明日のタスクをまとめて</code></pre>
+
+      <p>出力されたファイルは、次のような場面で力を発揮します。</p>
+      <ul>
+        <li>日々の開発ログを、後から読み返せる記録として残したいとき</li>
+        <li>学習メモを、ただの走り書きではなく「資料」として蓄積したいとき</li>
+        <li>調査結果や設計判断を、チームに共有できる体裁で整えたいとき</li>
+      </ul>
+
+      <h2>こんな人におすすめ</h2>
+      <p>
+        プレーンテキストでは物足りないが、ドキュメントツールを開くのは大袈裟──そんな <strong>「日常のメモと正式な資料の中間」</strong> を求めている方に最適です。
+      </p>
+
+      <blockquote>
+        書き手のための道具でありながら、読み手の体験までデザインする。それが html-memo の目指すところです。
+      </blockquote>
+
+    </div>
+    <footer class="memo-footer">
+      <span class="mark">html-memo</span>
+      <span>2026.05.18</span>
+    </footer>
+  </article>
 </body>
 </html>
