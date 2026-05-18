@@ -8,7 +8,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.ai/claude-code)
-[![Style](https://img.shields.io/badge/Style-Serif_%C3%97_Dark-121212)](#)
+[![Style](https://img.shields.io/badge/Style-Serif_%C3%97_Dark-111418)](#)
 
 [![日本語](https://img.shields.io/badge/Lang-%E6%97%A5%E6%9C%AC%E8%AA%9E-87CEEB.svg)](README.md)
 [![English](https://img.shields.io/badge/Lang-English-87CEEB.svg)](README.en.md)
@@ -31,15 +31,32 @@
 
 | | |
 |---|---|
-| **ダークモードベース** | 純黒より柔らかい `#121212` を採用し、長時間の閲覧でも目が疲れにくい |
+| **ダークモードベース** | 純黒より柔らかい `#111418` を採用し、長時間の閲覧でも目が疲れにくい |
 | **明朝体フォント** | 日本語テキストに品格と読みやすさを与える高級感のあるタイポグラフィ |
-| **オレンジのアクセント** | Claudeオレンジ `#D97757` が重要なインサイトを自然に強調 |
+| **寒色のアクセント** | 鎮静・集中効果のある寒色のシアン `#5BB3C9` が重要なインサイトを自然に強調 |
 | **インストール不要** | `commands` フォルダに1ファイル置くだけで動作 |
 | **多言語対応** | 話しかけた言語（日本語／英語）を自動判定し、同じ言語で出力 |
 
 ---
 
-## インストール方法
+## クイックスタート
+
+手動でファイルを配置する必要はありません。**Claude Code にこのリポジトリのURLを渡し、スキルを使えるようにするよう頼むだけ**でセットアップが完了します。
+
+Claude Code を起動し、次のように指示してください。
+
+```text
+このリポジトリのスキルを使えるようにして:
+https://github.com/y177649/html-memo
+```
+
+Claude Code がリポジトリの内容を読み取り、`commands/html-memo.md` をあなたのプロジェクトの `commands` フォルダに配置します。完了すれば `/html-memo` コマンドがそのまま使えます。
+
+---
+
+## 手動インストール
+
+Claude Code を使わず自分で設定する場合は、以下の手順で配置できます。
 
 1. このリポジトリの `commands/html-memo.md` をダウンロードします。
 2. あなたのプロジェクトのルートディレクトリにある `commands` フォルダ内に配置します。（フォルダがない場合は作成してください）

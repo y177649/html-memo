@@ -10,14 +10,14 @@
     *, *::before, *::after { box-sizing: border-box; }
 
     :root {
-      --bg: #121212;
-      --ink: #E9E5DC;
-      --ink-soft: #9d978a;
-      --ink-faint: #6b665d;
-      --accent: #D97757;
-      --accent-2: #E8A98F;
-      --rule: #2c2925;
-      --code-bg: #0c0b0a;
+      --bg: #111418;
+      --ink: #E4E7EA;
+      --ink-soft: #97A0A8;
+      --ink-faint: #5F6A72;
+      --accent: #5BB3C9;
+      --accent-2: #9FD4E0;
+      --rule: #262B30;
+      --code-bg: #0C0E11;
     }
 
     html { font-size: 14.5px; scroll-behavior: smooth; }
@@ -26,8 +26,8 @@
       margin: 0;
       background-color: var(--bg);
       background-image:
-        radial-gradient(900px 520px at 82% -8%, rgba(217,119,87,0.11), transparent 70%),
-        radial-gradient(720px 600px at -12% 108%, rgba(217,119,87,0.06), transparent 72%);
+        radial-gradient(900px 520px at 82% -8%, rgba(91,179,201,0.11), transparent 70%),
+        radial-gradient(720px 600px at -12% 108%, rgba(91,179,201,0.06), transparent 72%);
       background-attachment: fixed;
       color: var(--ink);
       font-family: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
@@ -48,7 +48,7 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    ::selection { background: rgba(217,119,87,0.32); color: #fff; }
+    ::selection { background: rgba(91,179,201,0.32); color: #fff; }
 
     article {
       max-width: 700px;
@@ -87,7 +87,7 @@
       font-weight: 800;
       line-height: 1.42;
       letter-spacing: 0.02em;
-      color: #F4F1EA;
+      color: #F0F3F5;
     }
 
     /* --- Body --- */
@@ -98,7 +98,7 @@
       font-size: 1.36rem;
       font-weight: 700;
       line-height: 1.58;
-      color: #F4F1EA;
+      color: #F0F3F5;
     }
     .memo-body h2::before {
       counter-increment: section;
@@ -138,7 +138,7 @@
     a {
       color: var(--accent-2);
       text-decoration: none;
-      border-bottom: 1px solid rgba(217,119,87,0.42);
+      border-bottom: 1px solid rgba(91,179,201,0.42);
       transition: border-color 0.2s ease;
     }
     a:hover { border-bottom-color: var(--accent); }
@@ -147,13 +147,13 @@
     blockquote {
       margin: 42px 0;
       padding: 24px 30px 26px;
-      background: linear-gradient(180deg, rgba(217,119,87,0.07), rgba(217,119,87,0.015));
+      background: linear-gradient(180deg, rgba(91,179,201,0.07), rgba(91,179,201,0.015));
       border: 1px solid var(--rule);
       border-left: 3px solid var(--accent);
       border-radius: 2px;
       font-size: 1.04rem;
       font-style: italic;
-      color: #cdc7b9;
+      color: #C4CCD0;
     }
     blockquote::before {
       content: "\201C";
@@ -206,7 +206,7 @@
       padding: 0;
       font-size: 0.85em;
       line-height: 1.75;
-      color: #d8d3c8;
+      color: #D2D8DB;
     }
 
     /* --- Table --- */
@@ -228,7 +228,7 @@
       border-bottom: 2px solid var(--accent);
     }
     tbody tr { transition: background 0.18s ease; }
-    tbody tr:hover { background: rgba(217,119,87,0.045); }
+    tbody tr:hover { background: rgba(91,179,201,0.045); }
 
     img { max-width: 100%; border: 1px solid var(--rule); border-radius: 4px; }
 
@@ -313,7 +313,7 @@
 
       <h2>Design Specification</h2>
       <p>
-        The background uses <strong>#121212</strong> — softer than pure black — layered with a warm radial gradient and a fine noise texture. It stays gentle on the eyes during long reading sessions, while the accent color <strong>#D97757</strong> (Claude orange) glows quietly across the page.
+        The background uses <strong>#111418</strong> — softer than pure black — layered with a cool radial gradient and a fine noise texture. It stays gentle on the eyes during long reading sessions, while the cool-toned accent <strong>#5BB3C9</strong> — a cyan associated with calm and focus — glows quietly across the page.
       </p>
 
       <h3>Typography</h3>
