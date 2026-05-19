@@ -7,8 +7,7 @@
 > Markdown인 채로 방치되기 쉬운 정보를, 품격 있는 문서로 승화시키기 위한 Claude Code 커스텀 스킬입니다. 설치 불필요, `commands` 폴더에 넣기만 하면 작동합니다.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Style](https://img.shields.io/badge/Style-Serif_%C3%97_Dark-111418)](#)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.ai/claude-code)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.com/claude-code)
 <img src="assets/claude-icon.png" alt="Claude" height="20">
 
 [![日本語](https://img.shields.io/badge/Lang-%E6%97%A5%E6%9C%AC%E8%AA%9E-87CEEB.svg)](README.md)
@@ -26,7 +25,7 @@
 `/html-memo`로 생성되는 HTML 파일은 다음과 같은 디자인이 됩니다.
 
 <div align="center">
-  <img src="assets/example.en.png" alt="html-memo 출력 예시" width="700">
+  <img src="assets/example.ko.png" alt="html-memo 출력 예시" width="700">
 </div>
 
 ---

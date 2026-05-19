@@ -7,8 +7,7 @@
 > Markdownのまま放置されがちな情報を、品格のあるドキュメントへ昇華させるための Claude Code カスタムスキルです。インストール不要、`commands` フォルダに置くだけで動作します。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Style](https://img.shields.io/badge/Style-Serif_%C3%97_Dark-111418)](#)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.ai/claude-code)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.com/claude-code)
 <img src="assets/claude-icon.png" alt="Claude" height="20">
 
 [![日本語](https://img.shields.io/badge/Lang-%E6%97%A5%E6%9C%AC%E8%AA%9E-87CEEB.svg)](README.md)

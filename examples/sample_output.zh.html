@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于 html-memo 技能</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg: #111418;
+      --ink: #E4E7EA;
+      --ink-soft: #97A0A8;
+      --ink-faint: #5F6A72;
+      --accent: #5BB3C9;
+      --accent-2: #9FD4E0;
+      --rule: #262B30;
+      --code-bg: #0C0E11;
+    }
+
+    html { font-size: 14.5px; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      font-size: 1rem;
+      line-height: 1.92;
+      letter-spacing: 0.045em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    ::selection { background: rgba(91,179,201,0.32); color: #fff; }
+
+    article {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 100px 32px 116px;
+      position: relative;
+    }
+
+    /* --- Header --- */
+    .memo-header {
+      margin-bottom: 8px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 20px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .kicker::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .memo-header h1 {
+      margin: 0;
+      font-size: clamp(1.78rem, 4.6vw, 2.55rem);
+      font-weight: 800;
+      line-height: 1.42;
+      letter-spacing: 0.02em;
+      color: #F0F3F5;
+    }
+
+    /* --- Body --- */
+    .memo-body { counter-reset: section; margin-top: 48px; }
+
+    .memo-body h2 {
+      margin: 70px 0 20px;
+      font-size: 1.36rem;
+      font-weight: 700;
+      line-height: 1.58;
+      color: #F0F3F5;
+    }
+    .memo-body h2::before {
+      counter-increment: section;
+      content: counter(section, decimal-leading-zero);
+      display: block;
+      margin-bottom: 7px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      color: var(--accent);
+    }
+    .memo-body > h2:first-child { margin-top: 0; }
+
+    .memo-body h3 {
+      margin: 40px 0 13px;
+      font-size: 1.06rem;
+      font-weight: 600;
+      color: var(--accent-2);
+    }
+
+    .memo-body p { margin: 0 0 1.55rem; }
+
+    .memo-body > p:first-of-type::first-letter {
+      float: left;
+      margin: 0.05em 0.13em -0.06em 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 4.3rem;
+      font-weight: 600;
+      line-height: 0.78;
+      color: var(--accent);
+    }
+
+    strong { color: var(--accent); font-weight: 700; }
+    em { color: var(--accent-2); }
+
+    a {
+      color: var(--accent-2);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(91,179,201,0.42);
+      transition: border-color 0.2s ease;
+    }
+    a:hover { border-bottom-color: var(--accent); }
+
+    /* --- Blockquote --- */
+    blockquote {
+      margin: 42px 0;
+      padding: 24px 30px 26px;
+      background: linear-gradient(180deg, rgba(91,179,201,0.07), rgba(91,179,201,0.015));
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      border-radius: 2px;
+      font-size: 1.04rem;
+      font-style: italic;
+      color: #C4CCD0;
+    }
+    blockquote::before {
+      content: "\201C";
+      display: block;
+      height: 0.42em;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 3.1rem;
+      font-style: normal;
+      line-height: 1;
+      color: var(--accent);
+    }
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* --- Lists --- */
+    ul, ol { margin: 0 0 1.55rem; padding-left: 1.5em; }
+    li { margin-bottom: 0.5rem; padding-left: 0.3em; }
+    li::marker { color: var(--accent); }
+    ol li::marker { font-family: "Cormorant Garamond", serif; font-weight: 600; }
+
+    /* --- Code --- */
+    code {
+      font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+      font-size: 0.82em;
+      letter-spacing: 0;
+      background: var(--code-bg);
+      border: 1px solid var(--rule);
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: var(--accent-2);
+    }
+    pre {
+      margin: 30px 0;
+      padding: 22px 24px;
+      background: var(--code-bg);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      overflow-x: auto;
+      position: relative;
+    }
+    pre::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent 60%);
+    }
+    pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 0.85em;
+      line-height: 1.75;
+      color: #D2D8DB;
+    }
+
+    /* --- Table --- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 0.9rem;
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--rule);
+    }
+    thead th {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--accent);
+    }
+    tbody tr { transition: background 0.18s ease; }
+    tbody tr:hover { background: rgba(91,179,201,0.045); }
+
+    img { max-width: 100%; border: 1px solid var(--rule); border-radius: 4px; }
+
+    /* --- Divider --- */
+    hr {
+      border: none;
+      height: 1px;
+      width: 64%;
+      margin: 54px auto;
+      background: linear-gradient(90deg, transparent, var(--rule), transparent);
+      position: relative;
+    }
+    hr::after {
+      content: "\25C7";
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0 14px;
+      background: var(--bg);
+      color: var(--accent);
+      font-size: 0.6rem;
+    }
+
+    /* --- Footer --- */
+    .memo-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 86px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 0.84rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .memo-footer .mark { color: var(--accent); }
+
+    /* --- Entrance --- */
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .memo-header, .memo-body > *, .memo-footer {
+      animation: rise 0.72s cubic-bezier(0.2,0.7,0.2,1) both;
+    }
+    .memo-header { animation-delay: 0.04s; }
+    .memo-body > *:nth-child(1) { animation-delay: 0.14s; }
+    .memo-body > *:nth-child(2) { animation-delay: 0.20s; }
+    .memo-body > *:nth-child(3) { animation-delay: 0.26s; }
+    .memo-body > *:nth-child(4) { animation-delay: 0.32s; }
+    .memo-body > *:nth-child(5) { animation-delay: 0.38s; }
+    .memo-body > *:nth-child(6) { animation-delay: 0.44s; }
+    .memo-footer { animation-delay: 0.5s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .memo-header, .memo-body > *, .memo-footer { animation: none; }
+    }
+
+    @media (max-width: 560px) {
+      article { padding: 70px 22px 84px; }
+      blockquote { padding: 20px 22px 22px; }
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <header class="memo-header">
+      <p class="kicker">Memo &middot; 2026.05.18</p>
+      <h1>关于 html-memo 技能</h1>
+    </header>
+    <div class="memo-body">
+
+      <p>
+        <strong>html-memo</strong> 是一款在 Claude Code 中运行的自定义技能。只需一条命令，便能将日常的工作日志与学习笔记保存为「衬线字体 × 深色模式」风格的优雅 <strong>HTML 文件</strong>。它的目标，是把那些常以纯 Markdown 形式被遗忘的信息，升华为真正值得反复翻阅的「文档」。
+      </p>
+
+      <blockquote>
+        笔记的巅峰并非写下的那一刻，其价值在重新阅读时方才重生。正因如此，视觉之美支撑着思考的连续性。
+      </blockquote>
+
+      <h2>设计规格</h2>
+      <p>
+        背景采用比纯黑更柔和的 <strong>#111418</strong>，摒弃装饰性渐变，仅以细微噪点构成平整而现代的版面。长时间阅读也不易疲劳，而冷色调强调色 <strong>#5BB3C9</strong>（一种带来沉静与专注的青色）则在纸面上静静生辉。
+      </p>
+
+      <h3>排版</h3>
+      <p>
+        正文指定使用衬线字体，为文本赋予品格与易读性。章节编号与引号搭配 <em>Cormorant Garamond</em>，以拉丁字母的神韵为版面带来节奏。字号刻意保持克制，留下安静而雅致的留白。
+      </p>
+
+      <table>
+        <thead>
+          <tr><th>元素</th><th>作用</th><th>处理方式</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>标题</td><td>章节分隔</td><td>自动编号</td></tr>
+          <tr><td>首段</td><td>导入</td><td>首字下沉</td></tr>
+          <tr><td>引用</td><td>强调洞见</td><td>装饰边框</td></tr>
+          <tr><td>代码</td><td>技术性表述</td><td>等宽字体区分</td></tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <h2>使用方法</h2>
+      <p>
+        在 Claude Code 的提示框中输入 <code>/html-memo</code>，再接着写下想要记录的内容即可。技能会自动生成 HTML 文件，并保存到 <code>memos/</code> 目录。
+      </p>
+
+      <pre><code>/html-memo 整理今天的开发回顾与明天的任务</code></pre>
+
+      <p>生成的文件在以下场景中尤为出彩：</p>
+      <ul>
+        <li>希望把日常开发日志留存为日后可反复翻阅的记录时</li>
+        <li>希望让学习笔记不只是随手涂写，而是作为「文档」积累时</li>
+        <li>希望把调研结果与设计决策整理成可与团队共享的体例时</li>
+      </ul>
+
+      <h2>多语言支持</h2>
+      <p>
+        技能会自动判别你所使用的语言。用日语下达指令便生成日语笔记，<strong>用中文下达指令便生成中文笔记</strong>，二者皆采用同样精美的版式。
+      </p>
+
+      <blockquote>
+        既是为写作者打造的工具，也为阅读者的体验而设计。这正是 html-memo 所追求的境界。
+      </blockquote>
+
+    </div>
+    <footer class="memo-footer">
+      <span class="mark">html-memo</span>
+      <span>2026.05.18</span>
+    </footer>
+  </article>
+</body>
+</html>

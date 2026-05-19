@@ -7,8 +7,7 @@
 > 這是一個 Claude Code 自訂技能，可將常被遺留為純 Markdown 的資訊昇華為精緻的文件。無需安裝，只要放入 `commands` 資料夾即可運作。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Style](https://img.shields.io/badge/Style-Serif_%C3%97_Dark-111418)](#)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.ai/claude-code)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.com/claude-code)
 <img src="assets/claude-icon.png" alt="Claude" height="20">
 
 [![日本語](https://img.shields.io/badge/Lang-%E6%97%A5%E6%9C%AC%E8%AA%9E-87CEEB.svg)](README.md)
@@ -26,7 +25,7 @@
 透過 `/html-memo` 生成的 HTML 檔案，會呈現如下設計。
 
 <div align="center">
-  <img src="assets/example.en.png" alt="html-memo 輸出範例" width="700">
+  <img src="assets/example.tw.png" alt="html-memo 輸出範例" width="700">
 </div>
 
 ---
