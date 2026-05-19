@@ -1,1 +1,11 @@
+# Claude / MCP（マシン固有の設定・認証情報を含む可能性）
 .claude/
+.claude.json
+.mcp.json
+
+# Bundled local tools（ソースからビルドした MCP サーバなど）
+.tools/
+
+# OS
+.DS_Store
+Thumbs.db
