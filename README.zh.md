@@ -7,8 +7,9 @@
 > 这是一个 Claude Code 自定义技能，可将常被遗留为纯 Markdown 的信息升华为精致的文档。无需安装，只需放入 `commands` 文件夹即可运行。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.ai/claude-code)
 [![Style](https://img.shields.io/badge/Style-Serif_%C3%97_Dark-111418)](#)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.ai/claude-code)
+<img src="assets/claude-icon.png" alt="Claude" height="20">
 
 [![日本語](https://img.shields.io/badge/Lang-%E6%97%A5%E6%9C%AC%E8%AA%9E-87CEEB.svg)](README.md)
 [![English](https://img.shields.io/badge/Lang-English-87CEEB.svg)](README.en.md)
