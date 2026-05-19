@@ -12,6 +12,9 @@
 
 [![日本語](https://img.shields.io/badge/Lang-%E6%97%A5%E6%9C%AC%E8%AA%9E-87CEEB.svg)](README.md)
 [![English](https://img.shields.io/badge/Lang-English-87CEEB.svg)](README.en.md)
+[![한국어](https://img.shields.io/badge/Lang-%ED%95%9C%EA%B5%AD%EC%96%B4-87CEEB.svg)](README.ko.md)
+[![简体中文](https://img.shields.io/badge/Lang-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-87CEEB.svg)](README.zh.md)
+[![繁體中文](https://img.shields.io/badge/Lang-%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87-87CEEB.svg)](README.tw.md)
 
 </div>
 
