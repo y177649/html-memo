@@ -7,7 +7,7 @@
 > Markdownのまま放置されがちな情報を、品格のあるドキュメントへ昇華させるための Claude Code カスタムスキルです。インストール不要、`commands` フォルダに置くだけで動作します。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.com/claude-code)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.ai/claude-code)
 <img src="assets/claude-icon.png" alt="Claude" height="20">
 
 [![日本語](https://img.shields.io/badge/Lang-%E6%97%A5%E6%9C%AC%E8%AA%9E-87CEEB.svg)](README.md)
@@ -38,7 +38,7 @@
 | **明朝体フォント** | 日本語テキストに品格と読みやすさを与える高級感のあるタイポグラフィ |
 | **寒色のアクセント** | 鎮静・集中効果のある寒色のシアン `#5BB3C9` が重要なインサイトを自然に強調 |
 | **インストール不要** | `commands` フォルダに1ファイル置くだけで動作 |
-| **多言語対応** | 話しかけた言語（日本語／英語）を自動判定し、同じ言語で出力 |
+| **多言語対応** | 話しかけた言語（日本語／英語／韓国語／简体中文／繁體中文）を自動判定し、同じ言語で出力 |
 
 ---
 

@@ -7,7 +7,7 @@
 > 这是一个 Claude Code 自定义技能，可将常被遗留为纯 Markdown 的信息升华为精致的文档。无需安装，只需放入 `commands` 文件夹即可运行。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.com/claude-code)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.ai/claude-code)
 <img src="assets/claude-icon.png" alt="Claude" height="20">
 
 [![日本語](https://img.shields.io/badge/Lang-%E6%97%A5%E6%9C%AC%E8%AA%9E-87CEEB.svg)](README.md)
@@ -25,7 +25,7 @@
 通过 `/html-memo` 生成的 HTML 文件，会呈现如下设计。
 
 <div align="center">
-  <img src="assets/example.zh.png" alt="html-memo 输出示例" width="700">
+  <img src="assets/example.en.png" alt="html-memo 输出示例" width="700">
 </div>
 
 ---
@@ -38,7 +38,7 @@
 | **明朝体字体** | 为文本赋予格调与可读性的高级排版 |
 | **冷色调强调色** | 具有沉静、聚焦效果的冷色青色 `#5BB3C9`，自然地突出重要洞见 |
 | **无需安装** | 只需将一个文件放入 `commands` 文件夹即可运行 |
-| **多语言支持** | 自动识别你输入时所用的语言，并以相同语言输出笔记 |
+| **多语言支持** | 自动识别你输入时所用的语言（日语／英语／韩语／简体中文／繁体中文），并以相同语言输出笔记 |
 
 ---
 

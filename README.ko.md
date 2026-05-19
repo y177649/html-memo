@@ -7,7 +7,7 @@
 > Markdown인 채로 방치되기 쉬운 정보를, 품격 있는 문서로 승화시키기 위한 Claude Code 커스텀 스킬입니다. 설치 불필요, `commands` 폴더에 넣기만 하면 작동합니다.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.com/claude-code)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97757)](https://claude.ai/claude-code)
 <img src="assets/claude-icon.png" alt="Claude" height="20">
 
 [![日本語](https://img.shields.io/badge/Lang-%E6%97%A5%E6%9C%AC%E8%AA%9E-87CEEB.svg)](README.md)
@@ -25,7 +25,7 @@
 `/html-memo`로 생성되는 HTML 파일은 다음과 같은 디자인이 됩니다.
 
 <div align="center">
-  <img src="assets/example.ko.png" alt="html-memo 출력 예시" width="700">
+  <img src="assets/example.en.png" alt="html-memo 출력 예시" width="700">
 </div>
 
 ---
@@ -38,7 +38,7 @@
 | **명조체 폰트** | 텍스트에 품격과 가독성을 더하는 고급스러운 타이포그래피 |
 | **한색 계열 강조색** | 진정·집중 효과가 있는 한색 시안 `#5BB3C9`이 중요한 인사이트를 자연스럽게 강조합니다 |
 | **설치 불필요** | `commands` 폴더에 파일 하나만 넣으면 작동합니다 |
-| **다국어 대응** | 입력한 언어를 자동으로 판별하여 같은 언어로 메모를 출력합니다 |
+| **다국어 대응** | 입력한 언어(일본어／영어／한국어／简体中文／繁體中文)를 자동으로 판별하여 같은 언어로 메모를 출력합니다 |
 
 ---
 
